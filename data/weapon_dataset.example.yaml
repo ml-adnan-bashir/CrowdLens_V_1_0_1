@@ -1,0 +1,10 @@
+# Template for your OWN lawfully collected, licensed and consented dataset.
+# Dataset layout: images/train, images/val, labels/train, labels/val.
+path: /absolute/path/to/weapon_dataset
+train: images/train
+val: images/val
+names:
+  0: handgun
+  1: rifle
+  2: knife
+

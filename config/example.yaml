@@ -1,0 +1,26 @@
+# Example only. Tune/evaluate thresholds for EACH camera and deployment.
+person_model: yolov8n.pt
+# Install/train a licensed firearm/knife detector; COCO person weights do not detect guns.
+weapon_model: null
+person_confidence: 0.35
+weapon_confidence: 0.50
+weapon_labels: [handgun, pistol, rifle, firearm, gun, knife]
+tracker: botsort.yaml
+# Histogram is fast and weak; resnet18 is a generic CNN, NOT validated person-ReID.
+reid_backend: histogram
+reid_similarity: 0.92
+reid_margin: 0.06
+reid_gallery_seconds: 45.0
+reid_ema: 0.8
+zone_names:
+  # Example: bottom-left quarter of frame, normalized xy coordinates.
+  demo_zone: [[0.0, 0.5], [0.5, 0.5], [0.5, 1.0], [0.0, 1.0]]
+zone_cooldown_seconds: 10.0
+rapid_motion_body_heights_per_second: 2.5
+rapid_motion_min_frames: 3
+rapid_motion_cooldown_seconds: 10.0
+prolonged_presence_seconds: 30.0
+absence_reset_seconds: 3.0
+event_cooldown_seconds: 4.0
+input_hash: true
+
